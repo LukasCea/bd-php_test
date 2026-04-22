@@ -14,4 +14,6 @@ while ($fila = $resultats->fetchArray(SQLITE3_ASSOC)) {
     echo "ID: ". $fila['usu_id'] ." - Nom: ". $fila['usu_nom'] ." - Email: ". $fila['usu_email'] ."<br>";
 }
 
+echo '<a href="pindex.php">Tornar a la pàgina de inici</a>';
+
 $db->close();
