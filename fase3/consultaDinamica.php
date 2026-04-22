@@ -4,7 +4,16 @@ $db = new SQLite3('database.db');
 
 // This line reads the 'nom' parameter from the POST request, which is expected to be sent from a form submission.
 $nom = $_POST['nom'];
+$email = $_POST['email'];
 echo "<p>Buscant usuaris amb el nom: $nom</p>";
+
+// This line prepares an SQL statement to insert a new user into the 'usuaris' table, using placeholders for the name and email values. The 'INSERT OR IGNORE' clause ensures that if a user with the same email already exists, the insertion will be ignored.
+$stmt = $db->prepare('INSERT OR IGNORE INTO usuaris (usu_nom, usu_email) VALUES (:nom, :email)');
+$stmt->bindValue(':nom', $nom, SQLITE3_TEXT);
+$stmt->bindValue(':email', $email, SQLITE3_TEXT);
+
+// This line executes the prepared statement and stores the results in the $resultats variable.
+$resultats = $stmt->execute();
 
 // This block prepares a SQL statement to select all records from the 'usuaris' table where the 'usu_nom' column matches the provided name. It uses a prepared statement to prevent SQL injection.
 $stmt = $db->prepare('SELECT * FROM usuaris WHERE usu_nom = :nom');

@@ -8,6 +8,7 @@
 <body>
     <form action="consultaDinamica.php" method="POST">
         Nom d'usuari: <input type="text" name="nom"><br/>
+        Email: <input type="email" name="email"><br/>
         <input type="submit" value="Cercar">
     </form>
 </body>
