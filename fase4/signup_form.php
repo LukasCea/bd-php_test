@@ -8,7 +8,7 @@
     <title>Signup</title>
 </head>
 <body>
-    <form action="../controller/signup_controller.php" method="POST">
+    <form action="controller/signup_controller.php" method="POST">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br>

@@ -10,7 +10,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="../controller/login_controller.php" method="POST">
+    <form action="controller/login_controller.php" method="POST">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br>
