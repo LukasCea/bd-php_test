@@ -24,6 +24,7 @@ $db->exec("INSERT OR IGNORE INTO marcas (mrc_nom, mrc_anys) VALUES ('Nike', 30)"
 $db->exec("INSERT OR IGNORE INTO marcas (mrc_nom, mrc_anys) VALUES ('Adidas', 33)");
 $db->exec("INSERT OR IGNORE INTO marcas (mrc_nom, mrc_anys) VALUES ('Puma', 20)");
 
+echo "\nFiles afectades: " . $db->changes();
 
 $resultats = $db->query("SELECT * FROM usuaris");
 while ($fila = $resultats->fetchArray(SQLITE3_ASSOC)) {
