@@ -4,7 +4,7 @@ $db = new SQLite3(__DIR__ . '/database_login.db');
 
 $db->exec("CREATE TABLE IF NOT EXISTS users (
     id_user INTEGER PRIMARY KEY AUTOINCREMENT, 
-    username TEXT, 
+    username TEXT UNIQUE, 
     password TEXT
     )");
 
