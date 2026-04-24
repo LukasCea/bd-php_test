@@ -7,4 +7,4 @@ fase 3: <img width="301" height="86" alt="image" src="https://github.com/user-at
 fase 4: <img width="943" height="790" alt="image" src="https://github.com/user-attachments/assets/2ca46d34-03c1-41f8-91cd-dfea1ee90ad2" />
  signup page: <img width="943" height="790" alt="image" src="https://github.com/user-attachments/assets/872b3eb6-9469-4600-bce3-832bd6787900" />
 
-
+fase 4.1: On this day i was working to make my code more secure using Bcrypt and refactoring my MVC carpet estructure.
