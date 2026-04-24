@@ -8,6 +8,11 @@ $db->exec("CREATE TABLE IF NOT EXISTS users (
     password TEXT
     )");
 
-$db->exec("INSERT OR IGNORE INTO users (username, password) VALUES ('admin', '123') ");
+$password_admin = '123';
+$hash_admin = password_hash($password_admin, PASSWORD_DEFAULT);
+
+$stmt = $db->prepare("INSERT OR IGNORE INTO users (username, password) VALUES ('admin', :hash)");
+$stmt->bindValue(':hash', $hash_admin, SQLITE3_TEXT);
+$stmt->execute();
 
 $db->close();
