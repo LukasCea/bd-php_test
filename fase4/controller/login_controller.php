@@ -13,9 +13,18 @@ $result = $stmt->execute();
 $user = $result->fetchArray(SQLITE3_ASSOC);
 
 if ($user && password_verify($password, $user['password'])) {
-    echo "Login successful!";
+    // 2. Guardar información útil en la superglobal $_SESSION
+    session_start();
+    $_SESSION['user_id'] = $user['id_user'];
+    $_SESSION['username'] = $user['username'];
+    
+    // 3. (Opcional pero recomendado) Regenerar el ID por seguridad
+    session_regenerate_id();
+
+    header("Location: ../view/principal_page.php"); // Redirigir a una zona privada
+    exit();
 } else {
-    echo "Invalid username or password.";
+    echo "Usuario o contraseña incorrectos.";
 }
 
 $db->close();
